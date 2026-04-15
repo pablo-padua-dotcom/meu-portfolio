@@ -1,14 +1,12 @@
 const projetos = [{
         titulo: 'Meu Portfólio',
-        desc: 'Design elegante com suporte a tema escuro.',
         imagem: './projeto.png',
-        url: '#'
+        url: 'https://github.com/pablo-padua-dotcom/meu-portfolio'
     },
     {
         titulo: 'Meu Portfólio React',
-        desc: 'Estiloso e Moderno.',
         imagem: './projeto.png',
-        url: '#'
+        url: 'https://github.com/pablo-padua-dotcom/meu-portfolio-react'
     }
 ];
 
