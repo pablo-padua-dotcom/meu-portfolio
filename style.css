@@ -1,0 +1,243 @@
+:root {
+    --fundo: #f8f5f2;
+    --texto: #1a1e26;
+    --primaria: #2c3e50;
+    --secundaria: #5d6d7e;
+    --painel: #ffffff;
+    --borda: rgba(44, 62, 80, 0.1);
+    --sombra: rgba(0, 0, 0, 0.05);
+    --destaque: #8e735b;
+    --transicao: all 0.3s ease-in-out;
+}
+
+body.modo-noturno {
+    --fundo: #0f141a;
+    --texto: #e6e9ed;
+    --primaria: #5dade2;
+    --secundaria: #34495e;
+    --painel: rgba(255, 255, 255, 0.03);
+    --borda: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--fundo);
+    color: var(--texto);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    transition: var(--transicao);
+}
+
+.fundo-decorativo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 0% 0%, var(--secundaria) 0%, transparent 35%), radial-gradient(circle at 100% 100%, var(--primaria) 0%, transparent 35%);
+    opacity: 0.12;
+    z-index: -1;
+}
+
+.caixa-principal {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.menu-superior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 5%;
+}
+
+.texto-logotipo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.texto-logotipo span {
+    color: var(--primaria);
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--texto);
+    font-weight: 500;
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+nav a:hover {
+    opacity: 1;
+    color: var(--primaria);
+}
+
+#alternador-tema {
+    background: var(--secundaria);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transicao);
+}
+
+.sessao-sobre-mim {
+    background: var(--painel);
+    border: 1px solid var(--borda);
+    border-radius: 30px;
+    padding: 50px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 50px;
+    box-shadow: 0 20px 40px var(--sombra);
+}
+
+.imagem-usuario img {
+    width: 260px;
+    height: 260px;
+    border-radius: 25px;
+    object-fit: cover;
+    box-shadow: 10px 10px 0px var(--primaria);
+}
+
+.textos-pessoais h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: var(--secundaria);
+}
+
+body.modo-noturno .textos-pessoais h1 {
+    color: var(--primaria);
+}
+
+.titulo-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    text-transform: lowercase;
+}
+
+.titulo-area h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.traco-decorativo {
+    flex-grow: 1;
+    height: 1px;
+    background: var(--primaria);
+    opacity: 0.3;
+}
+
+.grid-trabalhos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.card-trabalho {
+    background: var(--painel);
+    border: 1px solid var(--borda);
+    border-radius: 20px;
+    padding: 25px;
+    transition: var(--transicao);
+}
+
+.card-trabalho:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px var(--sombra);
+}
+
+.imagem-trabalho {
+    width: 100%;
+    height: 180px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.ancora-repositorio {
+    color: var(--primaria);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: block;
+    margin-top: 15px;
+}
+
+.sessao-fale-comigo {
+    background: var(--painel);
+    border: 1px solid var(--borda);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.icones-sociais {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 25px;
+}
+
+.icones-sociais a {
+    font-size: 2rem;
+    color: var(--primaria);
+    transition: var(--transicao);
+}
+
+.icones-sociais a:hover {
+    transform: scale(1.2);
+    color: var(--secundaria);
+}
+
+.rodape-pagina {
+    padding: 50px;
+    text-align: center;
+    font-size: 0.85rem;
+    opacity: 0.6;
+}
+
+@media (max-width: 850px) {
+    .sessao-sobre-mim {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+    }
+    .grid-trabalhos {
+        grid-template-columns: 1fr;
+    }
+    .imagem-usuario img {
+        width: 200px;
+        height: 200px;
+    }
+    .menu-superior {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
